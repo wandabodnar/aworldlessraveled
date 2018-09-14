@@ -1,0 +1,90 @@
+<html>
+
+  <head>
+
+  <meta charset="UTF-8">
+   <meta name="description" content="demo.visualise.today: foo">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <title>#travelmap</title>
+
+   <link rel="stylesheet" href="lib/leaflet.css">
+
+   <script src="lib/leaflet.js"></script>
+
+   <script src="lib/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="lib/Leaflet.Photo.css">
+
+   <script src="lib/Leaflet.Photo.js"></script>
+
+   <link rel="stylesheet" href="lib/MarkerCluster.css">
+
+   <link rel="stylesheet" href="lib/easy-button.css">
+
+   <script src="lib/easy-button.js"></script>
+
+   <link rel="stylesheet" href="lib/font-awesome.min.css">
+
+    <style>
+
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id='map'></div>
+
+    <script>
+
+    var map = L.map('map', {
+  center: [27, 5],
+  zoom: 2
+});
+
+L.tileLayer('http://a.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2FuZGFib2RuYXIiLCJhIjoiY2phdHM1dm0xNXF0ajJxanU3dmdmaHRqcCJ9.mFPox1jAE9LkZN6v5OZ7Lw',
+{maxZoom: 19, minZoom: 2}).addTo(map);
+
+var photos = [{
+    "lat": 73.18,
+    "lng": -26.23,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg"
+  }
+];
+
+var photoLayer = L.photo.cluster().on('click', function(evt) {
+  var photo = evt.layer.photo;
+  var template = '<img src="http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg" height="150" width="150"/>';
+  evt.layer.bindPopup(L.Util.template(template, photo)).openPopup();
+});
+
+photoLayer.add(photos).addTo(map);
+
+var home = {
+    lat: 10,
+    lng: 5,
+    zoom: 2
+  };
+  L.easyButton('<i class="fas fa-passport"></i>', function() {
+    map.setView([home.lat, home.lng], home.zoom);
+  }, 'Home').addTo(map);
+
+    </script>
+
+  </body>
+
+</html>
