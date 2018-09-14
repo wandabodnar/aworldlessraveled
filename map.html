@@ -51,31 +51,86 @@
     <script>
 
     var map = L.map('map', {
-  center: [27, 5],
+  center: [40, 5],
   zoom: 2
 });
 
 L.tileLayer('http://a.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2FuZGFib2RuYXIiLCJhIjoiY2phdHM1dm0xNXF0ajJxanU3dmdmaHRqcCJ9.mFPox1jAE9LkZN6v5OZ7Lw',
-{maxZoom: 19, minZoom: 2}).addTo(map);
+{maxZoom: 19, minZoom: 2, attribution: '&copy; <a href="https://www.linkedin.com/in/wandabodnar/">Wanda Bodnar</a>'}).addTo(map);
 
 var photos = [{
-    "lat": 73.18,
-    "lng": -26.23,
+    "lat": 73.31503,
+    "lng": -26.39936,
     "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg",
     "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg"
+  }, {
+    "lat": 72.25164,
+    "lng": -23.74146,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933623/Greenland/DSC_0546.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933623/Greenland/DSC_0546.jpg"
+  }, {
+    "lat": 72.4193,
+    "lng": -24.52942,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933613/Greenland/DSC_0569.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933613/Greenland/DSC_0569.jpg"
+  },  {
+    "lat": 72.87802,
+    "lng": -25.11142,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933613/Greenland/DSC_0588.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536933613/Greenland/DSC_0588.jpg"
+  }, {
+    "lat": 72.876037,
+    "lng": -25.106862,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934448/Greenland/IMGP8308.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934448/Greenland/IMGP8308.jpg"
+  }, {
+    "lat": 47.499530,
+    "lng": 19.046277,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934935/20.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934935/20.jpg"
+  }, {
+    "lat": 51.501031,
+    "lng": -0.056287,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934931/DSC_0271.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934931/DSC_0271.jpg"
+  }, {
+    "lat": 50.757160,
+    "lng": 0.149094,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934910/DSC_0081.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536934910/DSC_0081.jpg"
+  }, {
+    "lat": 40.693317,
+    "lng": -74.003881,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536935868/NYC/DSC_0103.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536935868/NYC/DSC_0103.jpg"
+  }, {
+    "lat": 40.693200,
+    "lng": -74.018975,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536935878/NYC/DSC_0242.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536935878/NYC/DSC_0242.jpg"
+  }, {
+    "lat": 40.706621,
+    "lng": -73.997514,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/a_0/v1536935895/NYC/DSC_0140.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/a_0/v1536935895/NYC/DSC_0140.jpg"
+  }, {
+    "lat": -28.634277,
+    "lng": 153.637806,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937295/Australia/IMG_4466.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937295/Australia/IMG_4466.jpg"
   }
 ];
 
 var photoLayer = L.photo.cluster().on('click', function(evt) {
   var photo = evt.layer.photo;
-  var template = '<img src="http://res.cloudinary.com/wandabodnar/image/upload/v1536923775/Greenland/Iceberg.jpg" height="150" width="150"/>';
+  var template = '<img src={thumbnail} height="200" width="auto"/>';
   evt.layer.bindPopup(L.Util.template(template, photo)).openPopup();
 });
 
 photoLayer.add(photos).addTo(map);
 
 var home = {
-    lat: 10,
+    lat: 40,
     lng: 5,
     zoom: 2
   };
