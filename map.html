@@ -51,7 +51,7 @@
     <script>
 
     var map = L.map('map', {
-  center: [40, 5],
+  center: [36, 25],
   zoom: 2
 });
 
@@ -133,6 +133,71 @@ var photos = [{
     "lng": 135.8291093,
     "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937851/Japan/IMG_3700.jpg",
     "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937851/Japan/IMG_3700.jpg"
+  }, {
+    "lat": 73.77839,
+    "lng": -24.29817,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997896/Greenland/DSC_0883.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997896/Greenland/DSC_0883.jpg"
+  }, {
+    "lat": 73.79918,
+    "lng": -24.19144,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997918/Greenland/DSC_0892.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997918/Greenland/DSC_0892.jpg"
+  }, {
+    "lat": 73.3291,
+    "lng": -25.24169,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997945/Greenland/DSC_0832.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536997945/Greenland/DSC_0832.jpg"
+  }, {
+    "lat": 64.142248,
+    "lng": -21.9280721,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/a_0/v1536998292/Iceland/DSC_0486.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/a_0/v1536998292/Iceland/DSC_0486.jpg"
+  }, {
+    "lat": 64.1461652,
+    "lng": -21.932754,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536998384/Iceland/DSC_0489.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536998384/Iceland/DSC_0489.jpg"
+  }, {
+    "lat": 64.144965,
+    "lng": -21.939488,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536998352/Iceland/DSC_0457.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536998352/Iceland/DSC_0457.jpg"
+  }, {
+    "lat": 64.327084,
+    "lng": -20.121115,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536998484/Iceland/DSC_0020_1.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536998484/Iceland/DSC_0020_1.jpg"
+  }, {
+    "lat": 64.312454,
+    "lng": -20.300375,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536998432/Iceland/DSC_0002.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536998432/Iceland/DSC_0002.jpg"
+  }, {
+    "lat": 64.261121,
+    "lng": -21.121524,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999322/Iceland/DSC_1000.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999322/Iceland/DSC_1000.jpg"
+  }, {
+    "lat": -20.280334,
+    "lng": 149.037497,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999429/Australia/IMG_4190.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999429/Australia/IMG_4190.jpg"
+  }, {
+    "lat": -27.478977,
+    "lng": 153.034067,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999477/Australia/IMG_4384.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999477/Australia/IMG_4384.jpg"
+  }, {
+    "lat": -33.848855,
+    "lng": 151.204002,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999458/Australia/IMG_4626.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999458/Australia/IMG_4626.jpg"
+  }, {
+    "lat": -25.046455,
+    "lng": 152.986049,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999468/Australia/IMG_4328.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536999468/Australia/IMG_4328.jpg"
   }
 ];
 
@@ -145,8 +210,8 @@ var photoLayer = L.photo.cluster().on('click', function(evt) {
 photoLayer.add(photos).addTo(map);
 
 var home = {
-    lat: 40,
-    lng: 5,
+    lat: 36,
+    lng: 25,
     zoom: 2
   };
   L.easyButton('<i class="fas fa-passport"></i>', function() {
