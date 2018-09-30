@@ -51,7 +51,7 @@
     <script>
 
     var map = L.map('map', {
-  center: [36, 25],
+  center: [35, 15],
   zoom: 2
 });
 
@@ -268,6 +268,46 @@ var photos = [{
     "lng": 31.300108,
     "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1537119605/Other/IMGP2539.jpg",
     "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1537119605/Other/IMGP2539.jpg"
+  }, {
+    "lat": 41.900797,
+    "lng": 12.483470,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316832/Other/rome.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316832/Other/rome.jpg"
+  }, {
+    "lat": 52.090717,
+    "lng": 5.1212557,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316815/Other/utrecht.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316815/Other/utrecht.jpg"
+  }, {
+    "lat": 45.432115,
+    "lng": 12.337327,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316830/Other/venice.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316830/Other/venice.jpg"
+  }, {
+    "lat": 36.461544,
+    "lng": 25.374464,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316798/Other/santorini.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316798/Other/santorini.jpg"
+  }, {
+    "lat": 52.505055,
+    "lng": 13.439654,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316791/Other/berlin.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316791/Other/berlin.jpg"
+  }, {
+    "lat": 41.902134,
+    "lng": 12.453401,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316778/Other/vatican.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1538316778/Other/vatican.jpg"
+  }, {
+    "lat": 50.433538,
+    "lng": -5.051888,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/c_scale,w_2500/v1538316777/Other/newquay.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/c_scale,w_2500/v1538316777/Other/newquay.jpg"
+  }, {
+    "lat": 52.372835,
+    "lng": 4.875836,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1538316762/Other/ams.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1538316762/Other/ams.jpg"
   }
 ];
 
@@ -280,8 +320,8 @@ var photoLayer = L.photo.cluster().on('click', function(evt) {
 photoLayer.add(photos).addTo(map);
 
 var home = {
-    lat: 36,
-    lng: 25,
+    lat: 35,
+    lng: 15,
     zoom: 2
   };
   L.easyButton('<i class="fas fa-passport"></i>', function() {
