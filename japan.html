@@ -1,0 +1,240 @@
+<html>
+
+  <head>
+
+  <meta charset="UTF-8">
+   <meta name="description" content="demo.visualise.today: foo">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <title>Road Trippin' Japan</title>
+
+   <link rel="stylesheet" href="lib/leaflet.css">
+
+   <script src="lib/leaflet.js"></script>
+
+   <script src="lib/leaflet.markercluster.js"></script>
+
+   <link rel="stylesheet" href="lib/Leaflet.Photo.css">
+
+   <script src="lib/Leaflet.Photo.js"></script>
+
+   <link rel="stylesheet" href="lib/MarkerCluster.css">
+
+   <link rel="stylesheet" href="lib/easy-button.css">
+
+   <script src="lib/easy-button.js"></script>
+
+   <link rel="stylesheet" href="lib/font-awesome.min.css">
+
+    <style>
+
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id='map'></div>
+
+    <script>
+
+    var map = L.map('map', {
+  center: [35.5, 138],
+  zoom: 7
+});
+
+L.tileLayer('http://a.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoid2FuZGFib2RuYXIiLCJhIjoiY2p0NXU3djg5MDNrZzN6bnpoaGx6MmMzMCJ9.1ZSsBHP1VNrORNIN_p0_Xg',
+{maxZoom: 19, minZoom: 2, attribution: '&copy; <a href="https://www.linkedin.com/in/wandabodnar/">Wanda Bodnar</a>'}).addTo(map);
+
+var photos = [{
+    "lat": 35.6604256,
+    "lng": 139.7287552,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937866/Japan/IMG_3721.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937866/Japan/IMG_3721.jpg"
+  }, {
+    "lat": 34.6889895,
+    "lng": 135.8376271,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536937832/Japan/IMG_3685.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1536937832/Japan/IMG_3685.jpg"
+  }, {
+    "lat": 34.677799,
+    "lng": 135.8291093,
+    "url": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937851/Japan/IMG_3700.jpg",
+    "thumbnail": "http://res.cloudinary.com/wandabodnar/image/upload/v1536937851/Japan/IMG_3700.jpg"
+  }, {
+    "lat": 36.2935582,
+    "lng": 140.281903,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280574/Japan%202/DSC_0013_4.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280574/Japan%202/DSC_0013_4.jpg"
+  }, {
+    "lat": 36.2968291,
+    "lng": 140.2614529,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280672/Japan%202/DSC_0023_3.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280672/Japan%202/DSC_0023_3.jpg"
+  }, {
+    "lat": 35.31674,
+    "lng": 139.535923,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280785/Japan%202/DSCPDC_0000_BURST20190410161930429.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280785/Japan%202/DSCPDC_0000_BURST20190410161930429.jpg"
+  }, {
+    "lat": 35.308477,
+    "lng": 139.533990,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280950/Japan%202/DSC_0055_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556280950/Japan%202/DSC_0055_2.jpg"
+  }, {
+    "lat": 35.311461,
+    "lng": 139.5317393,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281141/Japan%202/DSC_0068_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281141/Japan%202/DSC_0068_2.jpg"
+  }, {
+    "lat": 35.1424641,
+    "lng": 139.1579675,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281278/Japan%202/DSC_0093_3.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281278/Japan%202/DSC_0093_3.jpg"
+  }, {
+    "lat": 34.890246,
+    "lng": 138.9254593,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281460/Japan%202/DSC_0108_4.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556281460/Japan%202/DSC_0108_4.jpg"
+  }, {
+    "lat": 35.1846144,
+    "lng": 136.8989358,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/c_scale,w_5333/v1556282052/Japan%202/DSC_0134_3.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/c_scale,w_5333/v1556282052/Japan%202/DSC_0134_3.jpg"
+  }, {
+    "lat": 35.3707276,
+    "lng": 136.4598982,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556282279/Japan%202/DSC_0172_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556282279/Japan%202/DSC_0172_2.jpg"
+  }, {
+    "lat": 34.9352667,
+    "lng": 135.7624147,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556282717/Japan%202/DSC_0189_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556282717/Japan%202/DSC_0189_2.jpg"
+  }, {
+    "lat": 34.9289333,
+    "lng": 135.7592624,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1556282820/Japan%202/DSC_0207_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1556282820/Japan%202/DSC_0207_1.jpg"
+  }, {
+    "lat": 34.9367989,
+    "lng": 135.758983,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1556282997/Japan%202/DSC_0213_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1556282997/Japan%202/DSC_0213_1.jpg"
+  }, {
+    "lat": 35.0585372,
+    "lng": 135.7402205,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283432/Japan%202/DSC_0224_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283432/Japan%202/DSC_0224_1.jpg"
+  }, {
+    "lat": 35.0438806,
+    "lng": 135.7608705,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283687/Japan%202/DSC_0231_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283687/Japan%202/DSC_0231_1.jpg"
+  }, {
+    "lat": 35.0244622,
+    "lng": 135.7605757,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283823/Japan%202/DSC_0247_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1556283823/Japan%202/DSC_0247_1.jpg"
+  }, {
+    "lat": 34.671973,
+    "lng": 135.499371,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1557596305/Japan%202/DSC_0323_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/a_auto_right/v1557596305/Japan%202/DSC_0323_1.jpg"
+  }, {
+    "lat": 34.687698,
+    "lng": 135.525493,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596549/Japan%202/DSC_0314_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596549/Japan%202/DSC_0314_1.jpg"
+  }, {
+    "lat": 34.668157,
+    "lng": 135.502361,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596754/Japan%202/DSC_0337_1.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596754/Japan%202/DSC_0337_1.jpg"
+  }, {
+    "lat": 36.238333,
+    "lng": 137.968056,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596994/Japan%202/IMG_20190416_165923_823.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557596994/Japan%202/IMG_20190416_165923_823.jpg"
+  }, {
+    "lat": 36.027194,
+    "lng": 138.077629,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597218/Japan%202/DSC_0008_4.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597218/Japan%202/DSC_0008_4.jpg"
+  }, {
+    "lat": 35.474248,
+    "lng": 138.575446,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597369/Japan%202/DSC_0015_5.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597369/Japan%202/DSC_0015_5.jpg"
+  }, {
+    "lat": 35.522484,
+    "lng": 138.754034,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597573/Japan%202/DSC_0024_5.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597573/Japan%202/DSC_0024_5.jpg"
+  }, {
+    "lat": 35.501424,
+    "lng": 138.801546,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597796/Japan%202/DSC_0045_5.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557597796/Japan%202/DSC_0045_5.jpg"
+  }, {
+    "lat": 35.426851,
+    "lng": 138.871452,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598029/Japan%202/DSC_0085_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598029/Japan%202/DSC_0085_2.jpg"
+  }, {
+    "lat": 35.426851,
+    "lng": 138.871452,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598029/Japan%202/DSC_0085_2.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598029/Japan%202/DSC_0085_2.jpg"
+  }, {
+    "lat": 35.710284,
+    "lng": 139.800785,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598218/Japan%202/DSC_0043_6.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598218/Japan%202/DSC_0043_6.jpg"
+  }, {
+    "lat": 35.6969542,
+    "lng": 139.80026,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598413/Japan%202/DSC_0048_5.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598413/Japan%202/DSC_0048_5.jpg"
+  }, {
+    "lat": 35.714641,
+    "lng": 139.796413,
+    "url": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598557/Japan%202/IMG_20190419_121110_502.jpg",
+    "thumbnail": "https://res.cloudinary.com/wandabodnar/image/upload/v1557598557/Japan%202/IMG_20190419_121110_502.jpg"
+  }
+];
+
+var photoLayer = L.photo.cluster().on('click', function(evt) {
+  var photo = evt.layer.photo;
+  var template = '<img src={thumbnail} height="200" width="auto"/>';
+  evt.layer.bindPopup(L.Util.template(template, photo)).openPopup();
+});
+
+photoLayer.add(photos).addTo(map);
+
+var home = {
+    lat: 35.5,
+    lng: 138,
+    zoom: 7
+  };
+  L.easyButton('<i class="fas fa-passport"></i>', function() {
+    map.setView([home.lat, home.lng], home.zoom);
+  }, 'Home').addTo(map);
+
+    </script>
+
+  </body>
+
+</html>
