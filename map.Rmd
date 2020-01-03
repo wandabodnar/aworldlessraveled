@@ -1,4 +1,5 @@
 ---
+title: "#aworldlesstraveled"
 output: 
   flexdashboard::flex_dashboard:
     social: [ "menu" ]
@@ -6,10 +7,16 @@ output:
     favicon: favicon.png
 ---
 
-World map {data-icon="fa-globe"}
+Images {data-icon="fa-camera"}
 =====================================  
 
 <iframe src="https://wandabodnar.github.io/travel/worldmap.html" frameborder="0" style="width: 100%; height: 100%; position: absolute"></iframe>
+
+
+Places been {data-icon="fa-globe"}
+=====================================  
+
+<iframe src="https://www.myarx.net/placesbeen/share/v1/view/ee202acd-26c4-4d8f-9624-f0ac7610132c/en/map-cn?fbclid=IwAR33ubOhdz66Qm2xvX9MUfD6JPQdhybvc08xqb7OtkY_fyx_zk3dpYx_5zk" frameborder="0" style="width: 100%; height: 100%; position: absolute"></iframe>
 
 
 East Greenland {data-orientation=rows, data-icon="fa-map"}
