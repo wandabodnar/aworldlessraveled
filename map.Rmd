@@ -10,7 +10,7 @@ output:
 Images {data-icon="fa-camera"}
 =====================================  
 
-<iframe src="https://wandabodnar.github.io/travel/worldmap.html" frameborder="0" style="width: 100%; height: 100%; position: absolute"></iframe>
+<iframe src="https://wandabodnar.github.io/aworldlessraveled/worldmap.html" frameborder="0" style="width: 100%; height: 100%; position: absolute"></iframe>
 
 
 Places been {data-icon="fa-globe"}
